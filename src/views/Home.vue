@@ -16,6 +16,7 @@
         class="column is-3"
         v-for="product in latestProducts"
         v-bind:key="product.id"
+        style="background-color: lightgray;"
       >
         <div class="box">
           <figure class="image mb-4">
@@ -48,7 +49,7 @@ export default {
   components: {},
   mounted() {
     this.getLatestProducts();
-    document.title = 'Home | Accessory'
+    document.title = "Home | Accessory";
   },
   methods: {
     async getLatestProducts() {
@@ -60,9 +61,9 @@ export default {
           this.latestProducts = response.data;
         })
         .catch((error) => {
-          console.log(error)
-        })
-        this.$store.commit('setIsLoading', false)
+          console.log(error);
+        });
+      this.$store.commit("setIsLoading", false);
     },
   },
 };
@@ -70,15 +71,11 @@ export default {
 
 
 <style scoped>
-.image {
-  margin-top: -1.25rem;
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
-}
+
 .hero {
-  margin-left: -2.97rem;
-  margin-right: -2.97rem;
-  margin-top: -2.97rem;
+  /* margin-left: -2.97rem;
+  margin-right: -2.97rem; */
+  margin-top: -1.5rem;
   background: url("https://images.unsplash.com/photo-1633574364467-808a45292353?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80");
 }
 </style>

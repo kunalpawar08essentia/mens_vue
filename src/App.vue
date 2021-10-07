@@ -50,7 +50,7 @@
         </div>
 
         <div class="navbar-end">
-          <router-link to="/shirts" class="navbar-item">T-shirts</router-link>
+          <router-link to="/tshirts" class="navbar-item">T-shirts</router-link>
           <router-link to="/jeans" class="navbar-item">Jeans</router-link>
           <router-link to="/shoes" class="navbar-item">Shoes</router-link>
           <router-link to="/wallet" class="navbar-item">Wallet</router-link>
