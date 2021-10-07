@@ -19,13 +19,17 @@
       >
         <div class="box">
           <figure class="image mb-4">
-            <img :src="product.get_thumbnail"/>
+            <img :src="product.get_thumbnail" />
           </figure>
 
           <h3 class="is-size-4">{{ product.name }}</h3>
           <p class="is-size-6 has-text-grey">₹{{ product.price }}</p>
-          
-          <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4">View Details</router-link>
+
+          <router-link
+            v-bind:to="product.get_absolute_url"
+            class="button is-dark mt-4"
+            >View Details</router-link
+          >
         </div>
       </div>
     </div>
@@ -33,7 +37,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   name: "Home",
   data() {
@@ -44,17 +48,21 @@ export default {
   components: {},
   mounted() {
     this.getLatestProducts();
+    document.title = 'Home | Accessory'
   },
   methods: {
-    getLatestProducts() {
-      axios
+    async getLatestProducts() {
+      this.$store.commit("setIsLoading", true);
+
+      await axios
         .get("/api/v1/latest-products/")
         .then((response) => {
           this.latestProducts = response.data;
         })
         .catch((error) => {
-          console.log(error);
-        });
+          console.log(error)
+        })
+        this.$store.commit('setIsLoading', false)
     },
   },
 };
@@ -71,6 +79,6 @@ export default {
   margin-left: -2.97rem;
   margin-right: -2.97rem;
   margin-top: -2.97rem;
-  background: url('https://images.unsplash.com/photo-1633574364467-808a45292353?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80');
+  background: url("https://images.unsplash.com/photo-1633574364467-808a45292353?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80");
 }
 </style>
