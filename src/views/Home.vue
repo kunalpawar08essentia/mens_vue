@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <section class="hero is-medium is-dark mb-6">
+    <section class="hero is-medium is-dark mb-2">
       <div class="hero-body has-text-centered">
         <p class="title mb-6">Welcome to the Online Store</p>
         <p class="subtitle">The best Men's Accessories</p>
@@ -9,7 +9,7 @@
 
     <div class="columns is-multiline">
       <div class="column is-12">
-        <h2 class="is-size-2 has-text-centered">Latest products</h2>
+        <h2 class="is-size-4 has-text-centered">Latest products</h2>
       </div>
 
       <div
@@ -28,7 +28,7 @@
 
           <router-link
             v-bind:to="product.get_absolute_url"
-            class="button is-dark mt-4"
+            class="button is-danger is-outlined mt-4"
             >View Details</router-link
           >
         </div>
@@ -73,9 +73,9 @@ export default {
 <style scoped>
 
 .hero {
-  /* margin-left: -2.97rem;
-  margin-right: -2.97rem; */
-  margin-top: -1.5rem;
+  margin-left: -2.97rem;
+  margin-right: -2.97rem;
+  margin-top: -2.97rem;
   background: url("https://images.unsplash.com/photo-1633574364467-808a45292353?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80");
 }
 </style>

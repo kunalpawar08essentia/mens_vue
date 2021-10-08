@@ -1,8 +1,8 @@
 <template>
   <div id="wrapper">
-    <nav class="navbar is-dark">
+    <nav class="navbar is-black">
       <div class="navbar-brand">
-        <router-link to="/" class="navbar-item"
+        <router-link to="/" class="navbar-item has-text-primary"
           ><strong>Men's Accessories</strong></router-link
         >
 
@@ -31,14 +31,14 @@
                 <div class="control">
                   <input
                     type="text"
-                    class="input"
+                    class="input is-primary is-rounded is-normal"
                     placeholder="What are you looking for?"
                     name="query"
                   />
                 </div>
 
                 <div class="control">
-                  <button class="button is-success">
+                  <button class="button is-primary is-outlined is-rounded">
                     <span class="icon">
                       <i class="fas fa-search"></i>
                     </span>
@@ -50,23 +50,35 @@
         </div>
 
         <div class="navbar-end">
-          <router-link to="/tshirts" class="navbar-item">T-shirts</router-link>
-          <router-link to="/jeans" class="navbar-item">Jeans</router-link>
-          <router-link to="/shoes" class="navbar-item">Shoes</router-link>
-          <router-link to="/wallet" class="navbar-item">Wallet</router-link>
-          <router-link to="/belt" class="navbar-item">Belt</router-link>
+          <router-link to="/tshirts" class="navbar-item has-text-danger"
+            >T-shirts</router-link
+          >
+          <router-link to="/jeans" class="navbar-item has-text-info"
+            >Jeans</router-link
+          >
+          <router-link to="/shoes" class="navbar-item has-text-primary"
+            >Shoes</router-link
+          >
+          <router-link to="/wallet" class="navbar-item has-text-warning"
+            >Wallet</router-link
+          >
+          <router-link to="/belt" class="navbar-item has-text-success"
+            >Belt</router-link
+          >
 
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/my-account" class="button is-light"
+              <router-link
+                to="/my-account"
+                class="button is-primary is-outlined"
                 >My account</router-link
               >
 
-              <router-link to="/log-in" class="button is-light"
+              <router-link to="/log-in" class="button is-primary is-outlined"
                 >Log in</router-link
               >
 
-              <router-link to="/cart" class="button is-success">
+              <router-link to="/cart" class="button is-warning is-outlined">
                 <span class="icon"><i class="fas fa-shopping-cart"></i></span>
                 <span>Cart ({{ cartTotalLength }})</span>
               </router-link>
@@ -88,9 +100,9 @@
     </section>
 
     <footer class="footer">
-      <p class="has-text-centered">Copyright (c) 2021</p>
+      <!-- <p class="has-text-centered">Copyright (c) 2021</p> -->
 
-      <p class="has-text-right">Designed by Kunal Pawar</p>
+      <p class="has-text-centered">Designed by Kunal Pawar</p>
     </footer>
   </div>
 </template>
