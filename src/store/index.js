@@ -35,9 +35,22 @@ export default createStore({
 
       localStorage.setItem('cart', JSON.stringify(state.cart))
     },
-    setIsLoading(state, status){
+    setIsLoading(state, status) {
       state.isLoading = status
-    }
+    },
+    setToken(state, token) {
+        state.token = token
+        state.isAuthenticated = true
+    },  
+    removeToken(state) {
+        state.token = ''
+        state.isAuthenticated = false
+    },
+    clearCart(state) {
+      state.cart = { items: [] }
+
+      localStorage.setItem('cart', JSON.stringify(state.cart))
+    },
   },
   actions: {
   },

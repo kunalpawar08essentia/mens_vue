@@ -6,6 +6,7 @@
             </div>
 
             <div class="column is-12 box">
+                
                 <table class="table is-fullwidth" v-if="cartTotalLength">
                     <thead>
                         <tr>
@@ -36,7 +37,7 @@
 
                 <hr>
 
-                <router-link to="/cart/checkout" class="button is-dark">Proceed to checkout</router-link>
+                <router-link to="/cart/checkout" class="button is-danger is-outlined">Proceed to checkout</router-link>
             </div>
         </div>
     </div>

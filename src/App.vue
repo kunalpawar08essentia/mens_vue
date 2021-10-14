@@ -1,8 +1,14 @@
 <template>
   <div id="wrapper">
-    <nav class="navbar is-black">
+    <nav class="navbar">
       <div class="navbar-brand">
-        <router-link to="/" class="navbar-item has-text-primary"
+        <figure class="image is-64x64 ml-3 mt-3">
+          <img
+            class="is-rounded"
+            src="https://w7.pngwing.com/pngs/419/140/png-transparent-model-computer-icons-flamenco-symbol-models-celebrities-fashion-logo.png"
+          />
+        </figure>
+        <router-link to="/" class="navbar-item has-text-danger px-4"
           ><strong>Men's Accessories</strong></router-link
         >
 
@@ -31,14 +37,14 @@
                 <div class="control">
                   <input
                     type="text"
-                    class="input is-primary is-rounded is-normal"
+                    class="input is-danger is-rounded is-normal"
                     placeholder="What are you looking for?"
                     name="query"
                   />
                 </div>
 
                 <div class="control">
-                  <button class="button is-primary is-outlined is-rounded">
+                  <button class="button is-danger is-rounded">
                     <span class="icon">
                       <i class="fas fa-search"></i>
                     </span>
@@ -50,35 +56,37 @@
         </div>
 
         <div class="navbar-end">
-          <router-link to="/tshirts" class="navbar-item has-text-danger"
-            >T-shirts</router-link
+          <router-link to="/tshirts" class="navbar-item has-text-danger">
+            <strong>T-shirts</strong></router-link
           >
-          <router-link to="/jeans" class="navbar-item has-text-info"
-            >Jeans</router-link
+          <router-link to="/jeans" class="navbar-item has-text-danger">
+            <strong>Jeans</strong></router-link
           >
-          <router-link to="/shoes" class="navbar-item has-text-primary"
-            >Shoes</router-link
+          <router-link to="/shoes" class="navbar-item has-text-danger">
+            <strong>Shoes</strong></router-link
           >
-          <router-link to="/wallet" class="navbar-item has-text-warning"
-            >Wallet</router-link
+          <router-link to="/wallet" class="navbar-item has-text-danger">
+            <strong>Wallet</strong></router-link
           >
-          <router-link to="/belt" class="navbar-item has-text-success"
-            >Belt</router-link
+          <router-link to="/belt" class="navbar-item has-text-danger">
+            <strong>Belt</strong></router-link
           >
 
           <div class="navbar-item">
             <div class="buttons">
-              <router-link
-                to="/my-account"
-                class="button is-primary is-outlined"
-                >My account</router-link
-              >
+              <template v-if="$store.state.isAuthenticated">
+                <router-link to="/my-account" class="button is-danger"
+                  ><strong>My account</strong></router-link
+                >
+              </template>
 
-              <router-link to="/log-in" class="button is-primary is-outlined"
-                >Log in</router-link
-              >
+              <template v-else>
+                <router-link to="/log-in" class="button is-danger"
+                  ><strong>Log in</strong></router-link
+                >
+              </template>
 
-              <router-link to="/cart" class="button is-warning is-outlined">
+              <router-link to="/cart" class="button is-warning">
                 <span class="icon"><i class="fas fa-shopping-cart"></i></span>
                 <span>Cart ({{ cartTotalLength }})</span>
               </router-link>
@@ -102,12 +110,14 @@
     <footer class="footer">
       <!-- <p class="has-text-centered">Copyright (c) 2021</p> -->
 
-      <p class="has-text-centered">Designed by Kunal Pawar</p>
+      <p class="has-text-centered ">Designed by Kunal Pawar</p>
     </footer>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -119,6 +129,14 @@ export default {
   },
   beforeCreate() {
     this.$store.commit("initializeStore");
+
+    const token = this.$store.state.token;
+
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = "Token " + token;
+    } else {
+      axios.defaults.headers.common["Authorization"] = "";
+    }
   },
   mounted() {
     this.cart = this.$store.state.cart;
@@ -173,6 +191,8 @@ export default {
 
   &.is-loading {
     height: 80px;
+
+    background-color: cornsilk;
   }
 }
 </style>

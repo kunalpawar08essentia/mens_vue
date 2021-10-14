@@ -1,7 +1,7 @@
 <template>
-    <div class="column is-4">
+    <div class="column has-background-grey-lighter is-2">
         <div class="box">
-            <figure class="image mb-4">
+            <figure class="image is-3by4 mb-4">
                 <img v-bind:src="product.get_thumbnail">
             </figure>
 
