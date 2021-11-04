@@ -9,7 +9,7 @@ HTML5, CSS3, JavaScript, Vue.js, Python/Django, PostgreSQL, NGINX.
   
 ## Authors
 
-- [@kunalpawar7788](https://github.com/kunalpawar08essentia)
+- [@kunalpawar7788](https://github.com/kunalpawar7788)
 
   
 ## Installation
