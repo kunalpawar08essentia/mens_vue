@@ -28,9 +28,8 @@
               <button class="button is-success is-rounded">Log in</button>
             </div>
           </div>
-
+          
           <hr />
-
           Or <router-link to="/sign-up">click here</router-link> to sign up!
         </form>
       </div>
@@ -41,7 +40,9 @@
 <script>
 import axios from "axios";
 
+
 export default {
+ 
   name: "LogIn",
   data() {
     return {
@@ -50,6 +51,7 @@ export default {
       errors: [],
     };
   },
+  
   mounted() {
     document.title = "Log In | Accessory";
   },

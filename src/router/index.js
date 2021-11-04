@@ -38,6 +38,7 @@ const routes = [
     name: 'LogIn',
     component: LogIn
   },
+  
   {
     path: '/my-account',
     name: 'MyAccount',

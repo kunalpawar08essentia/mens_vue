@@ -2,12 +2,14 @@
   <div id="wrapper">
     <nav class="navbar">
       <div class="navbar-brand">
+        <router-link to="/">
         <figure class="image is-64x64 ml-3 mt-3">
           <img
             class="is-rounded"
             src="https://w7.pngwing.com/pngs/419/140/png-transparent-model-computer-icons-flamenco-symbol-models-celebrities-fashion-logo.png"
           />
         </figure>
+        </router-link>
         <router-link to="/" class="navbar-item has-text-danger px-4"
           ><strong>Men's Accessories</strong></router-link
         >
